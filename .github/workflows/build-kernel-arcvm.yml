@@ -58,6 +58,7 @@ jobs:
       - name: Checkout KernelSU
         uses: actions/checkout@v5
         with:
+          repository: tiann/KernelSU
           path: KernelSU
           fetch-depth: 0
 
