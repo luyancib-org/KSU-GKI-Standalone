@@ -159,6 +159,7 @@ jobs:
           if [ -f $SYMBOL_LIST ] && [ -f $ABI_XML ]; then
             # python3 $KSU_ROOT/scripts/abi_gki_all.py $ABI_XML > $SYMBOL_LIST
             echo "[+] Add KernelSU symbols"
+            wget -q -O$KSU_ROOT/kernel/export_symbol.txt https://github.com/${{github.repository}}/raw/main/kernel/export_symbol.txt
             cat $KSU_ROOT/kernel/export_symbol.txt | awk '{sub("[ \t]+","");print "  "$0}' >> $SYMBOL_LIST
           else
             echo "[+] No abi_gki_all.py found, skip adding symbols"
