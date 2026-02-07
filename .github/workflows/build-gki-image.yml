@@ -11,6 +11,7 @@ jobs:
     secrets: inherit
   build-a14-kernel:
     uses: ./.github/workflows/build-kernel-a14.yml
+    if: false
     secrets: inherit
   build-a15-kernel:
     uses: ./.github/workflows/build-kernel-a15.yml
