@@ -83,6 +83,10 @@ jobs:
           remove-codeql: "true"
           remove-docker-images: 'true'
 
+      - name: Run Apache Arrow's util_free_space.sh
+        run: |
+          wget -O- https://raw.githubusercontent.com/apache/arrow/main/ci/scripts/util_free_space.sh | bash -s
+
       - uses: actions/checkout@v5
         with:
           repository: tiann/KernelSU
